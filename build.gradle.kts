@@ -35,6 +35,12 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     runtimeOnly("org.postgresql:postgresql")
+
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.hibernate:hibernate-core")
+    runtimeOnly("com.h2database:h2")
+
+    implementation("org.hibernate:hibernate-core:5.6.4.Final")
 }
 
 kotlin {
@@ -45,4 +51,8 @@ kotlin {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+repositories {
+    mavenCentral()
 }
